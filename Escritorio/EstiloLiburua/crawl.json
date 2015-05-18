@@ -1,0 +1,13 @@
+{
+  "connectorGuid" : "ba709dc9-6caf-4890-a7ae-b3cc30e09ff4",
+  "dataTemplate" : [ "www.berria.eus/estiloliburua/galdera-erantzunak/{num}$" ],
+  "crawlTemplate" : [ "www.berria.eus/" ],
+  "destination" : "JSON",
+  "connections" : 3,
+  "advancedMode" : false,
+  "cookiesEnabled" : false,
+  "startUrls" : [ "http://www.berria.eus/estiloliburua/galdera-erantzunak/228", "http://www.berria.eus/estiloliburua/galdera-erantzunak/235", "http://www.berria.eus/estiloliburua/galdera-erantzunak/230", "http://www.berria.eus/estiloliburua/galdera-erantzunak/240", "http://www.berria.eus/estiloliburua/galdera-erantzunak/234" ],
+  "local" : false,
+  "maxDepth" : 3,
+  "pause" : 1
+}

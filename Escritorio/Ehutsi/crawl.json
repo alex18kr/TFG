@@ -1,0 +1,15 @@
+{
+  "crawlTemplate" : [ "www.ehu.eus/" ],
+  "dataTemplate" : [ "www.ehu.eus/ehutsi/edukiak/informacion/{alpha}_{num}/{alpha}_{num}0/azalpenak.html$" ],
+  "destination" : "JSON",
+  "maxDepth" : 3,
+  "startUrls" : [ "http://www.ehu.eus/ehutsi/edukiak/informacion/ehutsi_1010/eu_1010/azalpenak.html", "http://www.ehu.eus/ehutsi/edukiak/informacion/ehutsi_380/eu_380/azalpenak.html", "http://www.ehu.eus/ehutsi/edukiak/informacion/ehutsi_290/eu_290/azalpenak.html", "http://www.ehu.eus/ehutsi/edukiak/informacion/ehutsi_930/eu_930/azalpenak.html", "http://www.ehu.eus/ehutsi/edukiak/informacion/ehutsi_610/eu_610/azalpenak.html" ],
+  "advancedMode" : false,
+  "local" : false,
+  "connections" : 3,
+  "connectorGuid" : "5ce3baa5-b5ad-416b-a867-0847a66defbb",
+  "pause" : 1,
+  "canonicalDisabled" : false,
+  "cookiesEnabled" : false,
+  "robotsDisabled" : false
+}

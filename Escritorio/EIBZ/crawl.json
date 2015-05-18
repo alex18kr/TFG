@@ -1,0 +1,13 @@
+{
+  "advancedMode" : false,
+  "connections" : 3,
+  "pause" : 1,
+  "crawlTemplate" : [ "eibz.educacion.navarra.es/" ],
+  "dataTemplate" : [ "eibz.educacion.navarra.es/blogak/kontsultak/{words}/$" ],
+  "destination" : "JSON",
+  "maxDepth" : 2,
+  "startUrls" : [ "http://eibz.educacion.navarra.es/blogak/kontsultak/irten-atera/", "http://eibz.educacion.navarra.es/blogak/kontsultak/irakaslegoa-ala-irakasleria/", "http://eibz.educacion.navarra.es/blogak/kontsultak/galderen-ordena/", "http://eibz.educacion.navarra.es/blogak/kontsultak/nola-adierazi-desclasamiento-formativo-euskaraz/", "http://eibz.educacion.navarra.es/blogak/kontsultak/izan-ontsa/" ],
+  "local" : false,
+  "connectorGuid" : "0e58a0b7-82f3-475a-84f1-14a251701bc3",
+  "cookiesEnabled" : false
+}

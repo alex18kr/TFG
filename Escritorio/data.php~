@@ -1,0 +1,6 @@
+<?php
+$dataGaldera = $doc['results'][0]['data'];
+
+$Date=Date('Y-m-d H:i:s', strtotime("-7 days"));
+
+if($dataGaldera > $Date)

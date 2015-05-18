@@ -1,0 +1,15 @@
+/home/alex/Escritorio/import.io/import.io -crawl /home/alex/Escritorio/EstiloLiburua/crawl.json /home/alex/Escritorio/EstiloLiburua/auth.json | tee /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua.json   #ejecuta el crawler y escribe los datos
+
+
+sed ':a;N;$!ba;s/\n/,/g' /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua.json > /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua2.json  #cambia los saltos de linea por comas
+
+sed -i '1i [' /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua2.json  #inserta "["en la primera linea, pero deja un salto de linea despues del [
+sed -i '$a ]' /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua2.json  #inserta "]" en la ultima linea, pero deja un salto de linea antes del ]
+
+sed ':a;N;$!ba;s/\n//g' /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua2.json > /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua.json  #borra los nuevos saltos de linea y deja el resultado en el primer fichero
+
+rm /home/alex/Escritorio/EstiloLiburua/resultadoEstiloLiburua2.json #elimina el archivo 2 que ha servido para las operaciones anteriores
+
+
+php /home/alex/Escritorio/EstiloLiburua/estilo-liburua-crawler.php  #ejecuta el script php que inserta los datos
+

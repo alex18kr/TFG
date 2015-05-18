@@ -1,0 +1,13 @@
+{
+  "advancedMode" : false,
+  "destination" : "JSON",
+  "crawlTemplate" : [ "www.ehu.eus/" ],
+  "dataTemplate" : [ "www.ehu.eus/ehulku/orokorra/galdera_irakurri.asp?Kodea={num}$" ],
+  "connections" : 3,
+  "cookiesEnabled" : false,
+  "connectorGuid" : "2a6b7460-9581-42df-bdd8-e65f846b5f4f",
+  "startUrls" : [ "http://www.ehu.eus/ehulku/orokorra/galdera_irakurri.asp?Kodea=583", "http://www.ehu.eus/ehulku/orokorra/galdera_irakurri.asp?Kodea=584", "http://www.ehu.eus/ehulku/orokorra/galdera_irakurri.asp?Kodea=585", "http://www.ehu.eus/ehulku/orokorra/galdera_irakurri.asp?Kodea=586", "http://www.ehu.eus/ehulku/orokorra/galdera_irakurri.asp?Kodea=582" ],
+  "local" : false,
+  "maxDepth" : 4,
+  "pause" : 1
+}

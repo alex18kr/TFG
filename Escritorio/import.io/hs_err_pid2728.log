@@ -1,0 +1,865 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0xf7728507, pid=2728, tid=4149348096
+#
+# JRE version: 7.0_09-b05
+# Java VM: Java HotSpot(TM) Client VM (23.5-b02 mixed mode linux-x86 )
+# Problematic frame:
+# C  [ld-linux.so.2+0x18507]  realloc+0x2d57
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x08974400):  JavaThread "SWT Thread" [_thread_in_native, id=2728, stack(0xffe17000,0xffe67000)]
+
+siginfo:si_signo=SIGBUS: si_errno=0, si_code=2 (BUS_ADRERR), si_addr=0xde398684
+
+Registers:
+EAX=0x00000000, EBX=0xf7731000, ECX=0x00000047, EDX=0x00000000
+ESP=0xffe63b28, EBP=0xffe63ca8, ESI=0xfffff000, EDI=0xde398684
+EIP=0xf7728507, EFLAGS=0x00210206, CR2=0xde398684
+
+Top of Stack: (sp=0xffe63b28)
+0xffe63b28:   09009a20 f7716339 de398684 00000000
+0xffe63b38:   0000011c 00000812 00000046 00015000
+0xffe63b48:   09009a20 f771a8e2 09009d00 090099a8
+0xffe63b58:   0000006d f6b0488f f6d7cbe8 00000000
+0xffe63b68:   00016000 00015390 00015390 00000000
+0xffe63b78:   00000005 00016000 00018000 00017684
+0xffe63b88:   000177a0 00015000 00000003 0009f6c7
+0xffe63b98:   ffe63ca8 f7715ea8 00000000 90000001 
+
+Instructions: (pc=0xf7728507)
+0xf77284e7:   11 7a 04 aa 49 74 1f aa 49 74 1b 83 f2 01 75 02
+0xf77284f7:   aa 49 89 ca c1 e9 02 83 e2 03 69 c0 01 01 01 01
+0xf7728507:   f3 ab 89 d1 f3 aa 8b 44 24 08 5f c3 66 90 66 90
+0xf7728517:   66 90 66 90 66 90 66 90 90 8b 4c 24 0c 89 f8 8b 
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0xf7731000: <offset 0x21000> in /lib/ld-linux.so.2 at 0xf7710000
+ECX=0x00000047 is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0xffe63b28 is pointing into the stack for thread: 0x08974400
+EBP=0xffe63ca8 is pointing into the stack for thread: 0x08974400
+ESI=0xfffff000 is an unknown value
+EDI=0xde398684 is an unknown value
+
+
+Stack: [0xffe17000,0xffe67000],  sp=0xffe63b28,  free space=306k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ld-linux.so.2+0x18507]  realloc+0x2d57
+C  [ld-linux.so.2+0x8174]
+C  [ld-linux.so.2+0x12be4]
+C  [ld-linux.so.2+0xebd6]
+C  [libdl.so.2+0xcbc]  free+0xcbc
+C  [ld-linux.so.2+0xebd6]
+C  [libdl.so.2+0xd71]  dlopen+0x41
+V  [libjvm.so+0x2d1708]  JVM_LoadLibrary+0xf8
+C  [libjava.so+0xa7ab]  Java_java_lang_ClassLoader_00024NativeLibrary_load+0x5b
+j  java.lang.ClassLoader$NativeLibrary.load(Ljava/lang/String;)V+0
+j  java.lang.ClassLoader.loadLibrary1(Ljava/lang/Class;Ljava/io/File;)Z+302
+j  java.lang.ClassLoader.loadLibrary0(Ljava/lang/Class;Ljava/io/File;)Z+2
+j  java.lang.ClassLoader.loadLibrary(Ljava/lang/Class;Ljava/lang/String;Z)V+148
+j  java.lang.Runtime.loadLibrary0(Ljava/lang/Class;Ljava/lang/String;)V+54
+j  java.lang.System.loadLibrary(Ljava/lang/String;)V+7
+j  org.eclipse.swt.internal.Library.load(Ljava/lang/String;Ljava/lang/StringBuffer;)Z+19
+j  org.eclipse.swt.internal.Library.loadLibrary(Ljava/lang/String;Z)V+438
+j  org.eclipse.swt.internal.Library.loadLibrary(Ljava/lang/String;)V+2
+j  org.eclipse.swt.browser.Mozilla.initXULRunner(Ljava/lang/String;)Ljava/lang/String;+32
+j  org.eclipse.swt.browser.Mozilla.create(Lorg/eclipse/swt/widgets/Composite;I)V+44
+j  org.eclipse.swt.browser.Browser.<init>(Lorg/eclipse/swt/widgets/Composite;I)V+81
+j  m.cn.a(Lm/cn;)V+42
+j  m.cs.run()V+26
+j  org.eclipse.swt.widgets.RunnableLock.run()V+11
+j  org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Z)Z+29
+j  org.eclipse.swt.widgets.Display.runAsyncMessages(Z)Z+5
+j  sun.reflect.GeneratedMethodAccessor1.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+67
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  com.importio.builder.bootstrap.ui.SwtUI.loopSWTDispatch()V+31
+j  com.importio.builder.bootstrap.BootstrapApplication.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+77
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+103
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x27de15]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x315
+V  [libjvm.so+0x3a2a29]  os::os_exception_wrapper(void (*)(JavaValue*, methodHandle*, JavaCallArguments*, Thread*), JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x19
+V  [libjvm.so+0x27cc2f]  JavaCalls::call(JavaValue*, methodHandle, JavaCallArguments*, Thread*)+0x2f
+V  [libjvm.so+0x3dfe26]  Reflection::invoke(instanceKlassHandle, methodHandle, Handle, bool, objArrayHandle, BasicType, objArrayHandle, bool, Thread*)+0x3c6
+V  [libjvm.so+0x3e1dca]  Reflection::invoke_method(oopDesc*, Handle, objArrayHandle, Thread*)+0x15a
+V  [libjvm.so+0x2cdf23]  JVM_InvokeMethod+0x233
+C  [libjava.so+0x15362]  Java_sun_reflect_NativeMethodAccessorImpl_invoke0+0x32
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+211
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+126
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x27de15]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x315
+V  [libjvm.so+0x3a2a29]  os::os_exception_wrapper(void (*)(JavaValue*, methodHandle*, JavaCallArguments*, Thread*), JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x19
+V  [libjvm.so+0x27cc2f]  JavaCalls::call(JavaValue*, methodHandle, JavaCallArguments*, Thread*)+0x2f
+V  [libjvm.so+0x290c05]  jni_invoke_nonstatic(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x295
+V  [libjvm.so+0x2991cc]  jni_CallIntMethod+0xbc
+C  [eclipse_1502.so+0x8521]  startJavaJNI+0x418
+C  [eclipse_1502.so+0x99c0]  startJavaVM+0x24
+C  [eclipse_1502.so+0x31b7]  run+0x59d
+C  [import.io+0x10ee]  strchr@@GLIBC_2.0+0x10ee
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.ClassLoader$NativeLibrary.load(Ljava/lang/String;)V+0
+j  java.lang.ClassLoader.loadLibrary1(Ljava/lang/Class;Ljava/io/File;)Z+302
+j  java.lang.ClassLoader.loadLibrary0(Ljava/lang/Class;Ljava/io/File;)Z+2
+j  java.lang.ClassLoader.loadLibrary(Ljava/lang/Class;Ljava/lang/String;Z)V+148
+j  java.lang.Runtime.loadLibrary0(Ljava/lang/Class;Ljava/lang/String;)V+54
+j  java.lang.System.loadLibrary(Ljava/lang/String;)V+7
+j  org.eclipse.swt.internal.Library.load(Ljava/lang/String;Ljava/lang/StringBuffer;)Z+19
+j  org.eclipse.swt.internal.Library.loadLibrary(Ljava/lang/String;Z)V+438
+j  org.eclipse.swt.internal.Library.loadLibrary(Ljava/lang/String;)V+2
+j  org.eclipse.swt.browser.Mozilla.initXULRunner(Ljava/lang/String;)Ljava/lang/String;+32
+j  org.eclipse.swt.browser.Mozilla.create(Lorg/eclipse/swt/widgets/Composite;I)V+44
+j  org.eclipse.swt.browser.Browser.<init>(Lorg/eclipse/swt/widgets/Composite;I)V+81
+j  m.cn.a(Lm/cn;)V+42
+j  m.cs.run()V+26
+j  org.eclipse.swt.widgets.RunnableLock.run()V+11
+j  org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Z)Z+29
+j  org.eclipse.swt.widgets.Display.runAsyncMessages(Z)Z+5
+j  sun.reflect.GeneratedMethodAccessor1.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+67
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  com.importio.builder.bootstrap.ui.SwtUI.loopSWTDispatch()V+31
+j  com.importio.builder.bootstrap.BootstrapApplication.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+77
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+103
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+211
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+126
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0xe02e3400 JavaThread "Thread-6" [_thread_in_native, id=2827, stack(0xde399000,0xde3ea000)]
+  0xe02de800 JavaThread "Thread-5" [_thread_in_native, id=2826, stack(0xde826000,0xde877000)]
+  0x08fe9000 JavaThread "Thread-3" [_thread_blocked, id=2822, stack(0xde43b000,0xde48c000)]
+  0x08fe1c00 JavaThread "Keep-Alive-Timer" daemon [_thread_blocked, id=2821, stack(0xde48c000,0xde4dd000)]
+  0xe002b400 JavaThread "Worker-JM" daemon [_thread_blocked, id=2813, stack(0xdfa82000,0xdfad3000)]
+  0x08bd5400 JavaThread "Start Level Event Dispatcher" daemon [_thread_blocked, id=2809, stack(0xdfc8c000,0xdfcdd000)]
+  0x08bd2800 JavaThread "Framework Event Dispatcher" daemon [_thread_blocked, id=2808, stack(0xdfcdd000,0xdfd2e000)]
+  0x08bcd000 JavaThread "State Saver" [_thread_blocked, id=2807, stack(0xdfd2e000,0xdfd7f000)]
+  0x08a2c000 JavaThread "Service Thread" daemon [_thread_blocked, id=2792, stack(0xdff2e000,0xdff7f000)]
+  0x08a2a000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=2791, stack(0xdff7f000,0xe0000000)]
+  0x08a28800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2790, stack(0xe010d000,0xe015e000)]
+  0x089f0800 JavaThread "Finalizer" daemon [_thread_blocked, id=2789, stack(0xe015e000,0xe01af000)]
+  0x089ee800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2788, stack(0xe01af000,0xe0200000)]
+=>0x08974400 JavaThread "SWT Thread" [_thread_in_native, id=2728, stack(0xffe17000,0xffe67000)]
+
+Other Threads:
+  0x089e9400 VMThread [stack: 0xe0350000,0xe03d1000] [id=2787]
+  0x08a2e800 WatcherThread [stack: 0xdfd7f000,0xdfe00000] [id=2793]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 3721K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,  72% used [0xe06f0000, 0xe0a12600, 0xe0b40000)
+  from space 512K, 100% used [0xe0b40000, 0xe0bc0000, 0xe0bc0000)
+  to   space 512K,   0% used [0xe0bc0000, 0xe0bc0000, 0xe0c40000)
+ tenured generation   total 10944K, used 10782K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  98% used [0xe5c40000, 0xe66c7ab0, 0xe66c7c00, 0xe66f0000)
+ compacting perm gen  total 12288K, used 12082K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  98% used [0xf06f0000, 0xf12bcb98, 0xf12bcc00, 0xf12f0000)
+No shared spaces configured.
+
+Card table byte_map: [0xe064f000,0xe06f0000] byte_map_base: 0xdff4b880
+
+Polling page: 0xf76f2000
+
+Code Cache  [0xf4778000, 0xf4948000, 0xf6778000)
+ total_blobs=776 nmethods=594 adapters=116 free_code_cache=30942Kb largest_free_block=31685184
+
+Compilation events (10 events):
+Event: 3,289 Thread 0x08a2a000  586             java.util.zip.ZipFile::access$1200 (5 bytes)
+Event: 3,289 Thread 0x08a2a000 nmethod 586 0xf493ebc8 code [0xf493ecc0, 0xf493ed4c]
+Event: 3,290 Thread 0x08a2a000  587   !         java.util.zip.ZipFile::getInflater (56 bytes)
+Event: 3,291 Thread 0x08a2a000 nmethod 587 0xf493edc8 code [0xf493ef60, 0xf493f4b8]
+Event: 3,303 Thread 0x08a2a000  588   !         java.util.zip.ZipFile::releaseInflater (41 bytes)
+Event: 3,303 Thread 0x08a2a000 nmethod 588 0xf493f888 code [0xf493f9f0, 0xf493fde8]
+Event: 3,303 Thread 0x08a2a000  589             java.util.ArrayDeque::add (7 bytes)
+Event: 3,303 Thread 0x08a2a000 nmethod 589 0xf493ffc8 code [0xf49400c0, 0xf494015c]
+Event: 3,303 Thread 0x08a2a000  590             java.util.ArrayDeque::addLast (53 bytes)
+Event: 3,303 Thread 0x08a2a000 nmethod 590 0xf49401c8 code [0xf49402f0, 0xf4940498]
+
+GC Heap History (10 events):
+Event: 1,486 GC heap before
+{Heap before GC invocations=7 (full 0):
+ def new generation   total 4928K, used 4928K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K, 100% used [0xe06f0000, 0xe0b40000, 0xe0b40000)
+  from space 512K, 100% used [0xe0bc0000, 0xe0c40000, 0xe0c40000)
+  to   space 512K,   0% used [0xe0b40000, 0xe0b40000, 0xe0bc0000)
+ tenured generation   total 10944K, used 5375K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  49% used [0xe5c40000, 0xe617fde0, 0xe617fe00, 0xe66f0000)
+ compacting perm gen  total 12288K, used 8521K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  69% used [0xf06f0000, 0xf0f424a0, 0xf0f42600, 0xf12f0000)
+No shared spaces configured.
+Event: 1,493 GC heap after
+Heap after GC invocations=8 (full 0):
+ def new generation   total 4928K, used 512K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,   0% used [0xe06f0000, 0xe06f0000, 0xe0b40000)
+  from space 512K, 100% used [0xe0b40000, 0xe0bc0000, 0xe0bc0000)
+  to   space 512K,   0% used [0xe0bc0000, 0xe0bc0000, 0xe0c40000)
+ tenured generation   total 10944K, used 6863K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  62% used [0xe5c40000, 0xe62f3e10, 0xe62f4000, 0xe66f0000)
+ compacting perm gen  total 12288K, used 8521K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  69% used [0xf06f0000, 0xf0f424a0, 0xf0f42600, 0xf12f0000)
+No shared spaces configured.
+}
+Event: 1,638 GC heap before
+{Heap before GC invocations=8 (full 0):
+ def new generation   total 4928K, used 4928K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K, 100% used [0xe06f0000, 0xe0b40000, 0xe0b40000)
+  from space 512K, 100% used [0xe0b40000, 0xe0bc0000, 0xe0bc0000)
+  to   space 512K,   0% used [0xe0bc0000, 0xe0bc0000, 0xe0c40000)
+ tenured generation   total 10944K, used 6863K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  62% used [0xe5c40000, 0xe62f3e10, 0xe62f4000, 0xe66f0000)
+ compacting perm gen  total 12288K, used 9190K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  74% used [0xf06f0000, 0xf0fe9820, 0xf0fe9a00, 0xf12f0000)
+No shared spaces configured.
+Event: 1,645 GC heap after
+Heap after GC invocations=9 (full 0):
+ def new generation   total 4928K, used 512K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,   0% used [0xe06f0000, 0xe06f0000, 0xe0b40000)
+  from space 512K, 100% used [0xe0bc0000, 0xe0c40000, 0xe0c40000)
+  to   space 512K,   0% used [0xe0b40000, 0xe0b40000, 0xe0bc0000)
+ tenured generation   total 10944K, used 8251K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  75% used [0xe5c40000, 0xe644ecd8, 0xe644ee00, 0xe66f0000)
+ compacting perm gen  total 12288K, used 9190K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  74% used [0xf06f0000, 0xf0fe9820, 0xf0fe9a00, 0xf12f0000)
+No shared spaces configured.
+}
+Event: 1,776 GC heap before
+{Heap before GC invocations=9 (full 0):
+ def new generation   total 4928K, used 3783K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,  74% used [0xe06f0000, 0xe0a21e40, 0xe0b40000)
+  from space 512K, 100% used [0xe0bc0000, 0xe0c40000, 0xe0c40000)
+  to   space 512K,   0% used [0xe0b40000, 0xe0b40000, 0xe0bc0000)
+ tenured generation   total 10944K, used 8251K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  75% used [0xe5c40000, 0xe644ecd8, 0xe644ee00, 0xe66f0000)
+ compacting perm gen  total 12288K, used 9676K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  78% used [0xf06f0000, 0xf10631b8, 0xf1063200, 0xf12f0000)
+No shared spaces configured.
+Event: 1,782 GC heap after
+Heap after GC invocations=10 (full 0):
+ def new generation   total 4928K, used 461K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,   0% used [0xe06f0000, 0xe06f0000, 0xe0b40000)
+  from space 512K,  90% used [0xe0b40000, 0xe0bb3450, 0xe0bc0000)
+  to   space 512K,   0% used [0xe0bc0000, 0xe0bc0000, 0xe0c40000)
+ tenured generation   total 10944K, used 9435K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  86% used [0xe5c40000, 0xe6576e28, 0xe6577000, 0xe66f0000)
+ compacting perm gen  total 12288K, used 9676K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  78% used [0xf06f0000, 0xf10631b8, 0xf1063200, 0xf12f0000)
+No shared spaces configured.
+}
+Event: 1,915 GC heap before
+{Heap before GC invocations=10 (full 0):
+ def new generation   total 4928K, used 4877K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K, 100% used [0xe06f0000, 0xe0b40000, 0xe0b40000)
+  from space 512K,  90% used [0xe0b40000, 0xe0bb3450, 0xe0bc0000)
+  to   space 512K,   0% used [0xe0bc0000, 0xe0bc0000, 0xe0c40000)
+ tenured generation   total 10944K, used 9435K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  86% used [0xe5c40000, 0xe6576e28, 0xe6577000, 0xe66f0000)
+ compacting perm gen  total 12288K, used 9911K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  80% used [0xf06f0000, 0xf109dd70, 0xf109de00, 0xf12f0000)
+No shared spaces configured.
+Event: 1,920 GC heap after
+Heap after GC invocations=11 (full 0):
+ def new generation   total 4928K, used 512K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,   0% used [0xe06f0000, 0xe06f0000, 0xe0b40000)
+  from space 512K, 100% used [0xe0bc0000, 0xe0c40000, 0xe0c40000)
+  to   space 512K,   0% used [0xe0b40000, 0xe0b40000, 0xe0bc0000)
+ tenured generation   total 10944K, used 10131K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  92% used [0xe5c40000, 0xe6624e00, 0xe6624e00, 0xe66f0000)
+ compacting perm gen  total 12288K, used 9911K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  80% used [0xf06f0000, 0xf109dd70, 0xf109de00, 0xf12f0000)
+No shared spaces configured.
+}
+Event: 3,023 GC heap before
+{Heap before GC invocations=11 (full 0):
+ def new generation   total 4928K, used 4911K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,  99% used [0xe06f0000, 0xe0b3be80, 0xe0b40000)
+  from space 512K, 100% used [0xe0bc0000, 0xe0c40000, 0xe0c40000)
+  to   space 512K,   0% used [0xe0b40000, 0xe0b40000, 0xe0bc0000)
+ tenured generation   total 10944K, used 10131K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  92% used [0xe5c40000, 0xe6624e00, 0xe6624e00, 0xe66f0000)
+ compacting perm gen  total 12288K, used 11006K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  89% used [0xf06f0000, 0xf11afae0, 0xf11afc00, 0xf12f0000)
+No shared spaces configured.
+Event: 3,027 GC heap after
+Heap after GC invocations=12 (full 0):
+ def new generation   total 4928K, used 512K [0xe06f0000, 0xe0c40000, 0xe5c40000)
+  eden space 4416K,   0% used [0xe06f0000, 0xe06f0000, 0xe0b40000)
+  from space 512K, 100% used [0xe0b40000, 0xe0bc0000, 0xe0bc0000)
+  to   space 512K,   0% used [0xe0bc0000, 0xe0bc0000, 0xe0c40000)
+ tenured generation   total 10944K, used 10782K [0xe5c40000, 0xe66f0000, 0xf06f0000)
+   the space 10944K,  98% used [0xe5c40000, 0xe66c7ab0, 0xe66c7c00, 0xe66f0000)
+ compacting perm gen  total 12288K, used 11006K [0xf06f0000, 0xf12f0000, 0xf46f0000)
+   the space 12288K,  89% used [0xf06f0000, 0xf11afae0, 0xf11afc00, 0xf12f0000)
+No shared spaces configured.
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0,243 Thread 0x08974400 Threw 0xe072d138 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 0,244 Thread 0x08974400 Threw 0xe072f498 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 0,244 Thread 0x08974400 Threw 0xe072f5b0 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 0,630 Thread 0x08974400 Threw 0xe08747a8 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 1,090 Thread 0x08bd5400 Threw 0xe0999c18 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jni.cpp:716
+Event: 1,516 Thread 0x08e20400 Threw 0xe075e7d0 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 1,812 Thread 0x08e20400 Threw 0xe0873d40 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 1,813 Thread 0x08e20400 Threw 0xe0875378 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 2,893 Thread 0x08e20400 Threw 0xe09c2748 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jni.cpp:716
+Event: 2,894 Thread 0x08e20400 Threw 0xe09c3040 at /HUDSON/workspace/jdk7u9-2-build-linux-i586-product/jdk7u9/hotspot/src/share/vm/prims/jni.cpp:716
+
+Events (10 events):
+Event: 3,247 loading class 0xe02d9ef8 done
+Event: 3,253 loading class 0xe02e2988
+Event: 3,253 loading class 0xe02e2988 done
+Event: 3,260 Thread 0xe02de800 Thread added: 0xe02de800
+Event: 3,261 Thread 0xe02e3400 Thread added: 0xe02e3400
+Event: 3,267 loading class 0x08febf50
+Event: 3,267 loading class 0x08febf50 done
+Event: 3,268 Thread 0x08feac00 Thread exited: 0x08feac00
+Event: 3,284 loading class 0x089d11d8
+Event: 3,284 loading class 0x089d11d8 done
+
+
+Dynamic libraries:
+08048000-0804c000 r-xp 00000000 08:06 652015                             /home/alex/Escritorio/import.io/import.io
+0804c000-0804d000 rw-p 00003000 08:06 652015                             /home/alex/Escritorio/import.io/import.io
+0896b000-09028000 rw-p 00000000 00:00 0                                  [heap]
+de257000-de381000 rw-p 00000000 00:00 0 
+de381000-de397000 r-xp 00000000 08:06 652999                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-xulrunner-gtk-4236.so
+de397000-de399000 rw-p 00015000 08:06 652999                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-xulrunner-gtk-4236.so
+de399000-de39c000 ---p 00000000 00:00 0 
+de39c000-de3ea000 rwxp 00000000 00:00 0                                  [stack:2827]
+de3ea000-de3ed000 ---p 00000000 00:00 0 
+de3ed000-de43b000 rwxp 00000000 00:00 0 
+de43b000-de43e000 ---p 00000000 00:00 0 
+de43e000-de48c000 rwxp 00000000 00:00 0                                  [stack:2822]
+de48c000-de48f000 ---p 00000000 00:00 0 
+de48f000-de4dd000 rwxp 00000000 00:00 0                                  [stack:2821]
+de4dd000-de4e2000 r-xp 00000000 08:01 576470                             /lib/i386-linux-gnu/libnss_dns-2.19.so
+de4e2000-de4e3000 r--p 00004000 08:01 576470                             /lib/i386-linux-gnu/libnss_dns-2.19.so
+de4e3000-de4e4000 rw-p 00005000 08:01 576470                             /lib/i386-linux-gnu/libnss_dns-2.19.so
+de4f4000-de4fd000 r-xp 00000000 08:06 652901                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-webkit-gtk-4236.so
+de4fd000-de4fe000 rw-p 00009000 08:06 652901                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-webkit-gtk-4236.so
+de4fe000-de507000 r-xp 00000000 08:06 652987                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-atk-gtk-4236.so
+de507000-de508000 rw-p 00009000 08:06 652987                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-atk-gtk-4236.so
+de508000-de74f000 rw-p 00000000 00:00 0 
+de74f000-de7af000 rw-s 00000000 00:04 1572869                            /SYSV00000000 (deleted)
+de7af000-de7cb000 r-xp 00000000 08:01 524302                             /lib/i386-linux-gnu/libgcc_s.so.1
+de7cb000-de7cc000 r--p 0001b000 08:01 524302                             /lib/i386-linux-gnu/libgcc_s.so.1
+de7cc000-de7cd000 rw-p 0001c000 08:01 524302                             /lib/i386-linux-gnu/libgcc_s.so.1
+de7ce000-de7d2000 rw-p 00000000 00:00 0 
+de7d2000-de7d8000 r--p 00000000 08:01 403748                             /usr/share/locale-langpack/es/LC_MESSAGES/gdk-pixbuf.mo
+de7d8000-de7dc000 r--s 0002d000 08:06 652605                             /home/alex/Escritorio/import.io/jre/lib/ext/sunjce_provider.jar
+de7dc000-de7e6000 r-xp 00000000 08:06 652929                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-cairo-gtk-4236.so
+de7e6000-de7e7000 rw-p 0000a000 08:06 652929                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-cairo-gtk-4236.so
+de7e7000-de81a000 r-xp 00000000 08:06 652776                             /home/alex/Escritorio/import.io/jre/lib/i386/libsunec.so
+de81a000-de81e000 rw-p 00032000 08:06 652776                             /home/alex/Escritorio/import.io/jre/lib/i386/libsunec.so
+de81e000-de822000 rw-p 00000000 00:00 0 
+de822000-de823000 r--s 00003000 08:06 652607                             /home/alex/Escritorio/import.io/jre/lib/ext/sunec.jar
+de823000-de826000 r--s 00018000 08:06 652716                             /home/alex/Escritorio/import.io/jre/lib/jce.jar
+de826000-de829000 ---p 00000000 00:00 0 
+de829000-de877000 rwxp 00000000 00:00 0                                  [stack:2826]
+de877000-de8c9000 r--p 00000000 08:01 4007                               /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+de8c9000-de920000 r--p 00000000 08:01 4176                               /usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-R.ttf
+de920000-de921000 r--s 00000000 08:06 523373                             /home/alex/.cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-4
+de921000-de929000 r--s 00000000 08:06 523372                             /home/alex/.cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-4
+de929000-de92d000 r--s 00000000 08:06 523371                             /home/alex/.cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-4
+de92d000-de92e000 r--s 00000000 08:06 523370                             /home/alex/.cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-4
+de92e000-de92f000 r--s 00000000 08:06 523369                             /home/alex/.cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-4
+de92f000-de934000 r--s 00000000 08:06 523368                             /home/alex/.cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-4
+de934000-de937000 r--s 00000000 08:06 523367                             /home/alex/.cache/fontconfig/de156ccd2eddbdc19d37a45b8b2aac9c-le32d4.cache-4
+de937000-de938000 r--s 00000000 08:06 523366                             /home/alex/.cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le32d4.cache-4
+de938000-de93b000 r--s 00000000 08:06 523365                             /home/alex/.cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le32d4.cache-4
+de93b000-de93c000 r--s 00000000 08:06 523364                             /home/alex/.cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le32d4.cache-4
+de93c000-de93e000 r--s 00000000 08:06 523363                             /home/alex/.cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le32d4.cache-4
+de93e000-de93f000 r--s 00000000 08:06 523406                             /home/alex/.cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-4
+de93f000-de943000 r--s 00000000 08:06 523360                             /home/alex/.cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le32d4.cache-4
+de943000-de948000 r--s 00000000 08:06 523359                             /home/alex/.cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le32d4.cache-4
+de948000-de949000 r--s 00000000 08:06 523358                             /home/alex/.cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le32d4.cache-4
+de949000-de94d000 r--s 00000000 08:06 523356                             /home/alex/.cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le32d4.cache-4
+de94d000-de95d000 r--s 00000000 08:06 523355                             /home/alex/.cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-4
+de95d000-de964000 r--s 00000000 08:06 523354                             /home/alex/.cache/fontconfig/3f7329c5293ffd510edef78f73874cfd-le32d4.cache-4
+de964000-de967000 r--s 00000000 08:06 523353                             /home/alex/.cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le32d4.cache-4
+de967000-de977000 r--s 00000000 08:06 523351                             /home/alex/.cache/fontconfig/da82082e1ef13c4097208324d67c180c-le32d4.cache-4
+de977000-de990000 r--p 00000000 08:01 403643                             /usr/share/locale-langpack/es/LC_MESSAGES/glib20.mo
+de990000-de9ba000 r--p 00000000 08:01 403680                             /usr/share/locale-langpack/es/LC_MESSAGES/gtk20-properties.mo
+de9ba000-de9c1000 r-xp 00000000 08:01 282264                             /usr/lib/i386-linux-gnu/libdatrie.so.1.3.1
+de9c1000-de9c2000 r--p 00006000 08:01 282264                             /usr/lib/i386-linux-gnu/libdatrie.so.1.3.1
+de9c2000-de9c3000 rw-p 00007000 08:01 282264                             /usr/lib/i386-linux-gnu/libdatrie.so.1.3.1
+de9c3000-de9de000 r-xp 00000000 08:01 282356                             /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+de9de000-de9df000 r--p 0001b000 08:01 282356                             /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+de9df000-de9e0000 rw-p 0001c000 08:01 282356                             /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+de9e0000-de9e5000 r-xp 00000000 08:01 282079                             /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+de9e5000-de9e6000 r--p 00004000 08:01 282079                             /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+de9e6000-de9e7000 rw-p 00005000 08:01 282079                             /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+de9e7000-de9e9000 r-xp 00000000 08:01 282069                             /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+de9e9000-de9ea000 r--p 00001000 08:01 282069                             /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+de9ea000-de9eb000 rw-p 00002000 08:01 282069                             /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+de9eb000-dea11000 r-xp 00000000 08:01 524347                             /lib/i386-linux-gnu/libexpat.so.1.6.0
+dea11000-dea13000 r--p 00026000 08:01 524347                             /lib/i386-linux-gnu/libexpat.so.1.6.0
+dea13000-dea14000 rw-p 00028000 08:01 524347                             /lib/i386-linux-gnu/libexpat.so.1.6.0
+dea14000-dea83000 r-xp 00000000 08:01 524357                             /lib/i386-linux-gnu/libpcre.so.3.13.1
+dea83000-dea84000 r--p 0006e000 08:01 524357                             /lib/i386-linux-gnu/libpcre.so.3.13.1
+dea84000-dea85000 rw-p 0006f000 08:01 524357                             /lib/i386-linux-gnu/libpcre.so.3.13.1
+dea85000-dea8b000 r-xp 00000000 08:01 281811                             /usr/lib/i386-linux-gnu/libffi.so.6.0.2
+dea8b000-dea8d000 r--p 00005000 08:01 281811                             /usr/lib/i386-linux-gnu/libffi.so.6.0.2
+dea8d000-dea8e000 rw-p 00007000 08:01 281811                             /usr/lib/i386-linux-gnu/libffi.so.6.0.2
+dea8e000-dea96000 r-xp 00000000 08:01 282368                             /usr/lib/i386-linux-gnu/libthai.so.0.2.0
+dea96000-dea97000 r--p 00007000 08:01 282368                             /usr/lib/i386-linux-gnu/libthai.so.0.2.0
+dea97000-dea98000 rw-p 00008000 08:01 282368                             /usr/lib/i386-linux-gnu/libthai.so.0.2.0
+dea98000-deaf3000 r-xp 00000000 08:01 282390                             /usr/lib/i386-linux-gnu/libharfbuzz.so.0.935.0
+deaf3000-deaf4000 r--p 0005a000 08:01 282390                             /usr/lib/i386-linux-gnu/libharfbuzz.so.0.935.0
+deaf4000-deaf5000 rw-p 0005b000 08:01 282390                             /usr/lib/i386-linux-gnu/libharfbuzz.so.0.935.0
+deaf5000-deb08000 r-xp 00000000 08:01 576469                             /lib/i386-linux-gnu/libresolv-2.19.so
+deb08000-deb09000 r--p 00013000 08:01 576469                             /lib/i386-linux-gnu/libresolv-2.19.so
+deb09000-deb0a000 rw-p 00014000 08:01 576469                             /lib/i386-linux-gnu/libresolv-2.19.so
+deb0a000-deb0c000 rw-p 00000000 00:00 0 
+deb0c000-deb30000 r-xp 00000000 08:01 524361                             /lib/i386-linux-gnu/libselinux.so.1
+deb30000-deb31000 r--p 00023000 08:01 524361                             /lib/i386-linux-gnu/libselinux.so.1
+deb31000-deb32000 rw-p 00024000 08:01 524361                             /lib/i386-linux-gnu/libselinux.so.1
+deb32000-deb33000 rw-p 00000000 00:00 0 
+deb33000-deb4b000 r-xp 00000000 08:01 524349                             /lib/i386-linux-gnu/libz.so.1.2.8
+deb4b000-deb4c000 r--p 00017000 08:01 524349                             /lib/i386-linux-gnu/libz.so.1.2.8
+deb4c000-deb4d000 rw-p 00018000 08:01 524349                             /lib/i386-linux-gnu/libz.so.1.2.8
+deb4d000-deb55000 r-xp 00000000 08:01 282211                             /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+deb55000-deb56000 r--p 00008000 08:01 282211                             /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+deb56000-deb57000 rw-p 00009000 08:01 282211                             /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+deb57000-deb59000 r-xp 00000000 08:01 282222                             /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+deb59000-deb5a000 r--p 00001000 08:01 282222                             /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+deb5a000-deb5b000 rw-p 00002000 08:01 282222                             /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+deb5b000-deb85000 r-xp 00000000 08:01 524359                             /lib/i386-linux-gnu/libpng12.so.0.51.0
+deb85000-deb86000 r--p 00029000 08:01 524359                             /lib/i386-linux-gnu/libpng12.so.0.51.0
+deb86000-deb87000 rw-p 0002a000 08:01 524359                             /lib/i386-linux-gnu/libpng12.so.0.51.0
+deb87000-dec2d000 r-xp 00000000 08:01 282200                             /usr/lib/i386-linux-gnu/libpixman-1.so.0.32.4
+dec2d000-dec32000 r--p 000a6000 08:01 282200                             /usr/lib/i386-linux-gnu/libpixman-1.so.0.32.4
+dec32000-dec33000 rw-p 000ab000 08:01 282200                             /usr/lib/i386-linux-gnu/libpixman-1.so.0.32.4
+dec33000-dec53000 r-xp 00000000 08:01 282090                             /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+dec53000-dec54000 r--p 0001f000 08:01 282090                             /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+dec54000-dec55000 rw-p 00020000 08:01 282090                             /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+dec55000-ded00000 r-xp 00000000 08:01 264888                             /usr/lib/i386-linux-gnu/libfreetype.so.6.11.1
+ded00000-ded04000 r--p 000ab000 08:01 264888                             /usr/lib/i386-linux-gnu/libfreetype.so.6.11.1
+ded04000-ded05000 rw-p 000af000 08:01 264888                             /usr/lib/i386-linux-gnu/libfreetype.so.6.11.1
+ded05000-ded07000 r-xp 00000000 08:01 282453                             /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+ded07000-ded08000 r--p 00001000 08:01 282453                             /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+ded08000-ded09000 rw-p 00002000 08:01 282453                             /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+ded09000-ded0b000 r-xp 00000000 08:01 282422                             /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+ded0b000-ded0c000 r--p 00001000 08:01 282422                             /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+ded0c000-ded0d000 rw-p 00002000 08:01 282422                             /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+ded0d000-ded16000 r-xp 00000000 08:01 282443                             /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+ded16000-ded17000 r--p 00008000 08:01 282443                             /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+ded17000-ded18000 rw-p 00009000 08:01 282443                             /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+ded18000-ded21000 r-xp 00000000 08:01 282485                             /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+ded21000-ded22000 r--p 00008000 08:01 282485                             /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+ded22000-ded23000 rw-p 00009000 08:01 282485                             /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+ded23000-ded33000 r-xp 00000000 08:01 282464                             /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+ded33000-ded34000 r--p 00010000 08:01 282464                             /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+ded34000-ded35000 rw-p 00011000 08:01 282464                             /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+ded35000-ded37000 r-xp 00000000 08:01 282474                             /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+ded37000-ded38000 r--p 00001000 08:01 282474                             /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+ded38000-ded39000 rw-p 00002000 08:01 282474                             /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+ded39000-ded42000 r-xp 00000000 08:01 282232                             /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+ded42000-ded43000 r--p 00008000 08:01 282232                             /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+ded43000-ded44000 rw-p 00009000 08:01 282232                             /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+ded44000-ded55000 r-xp 00000000 08:01 282112                             /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+ded55000-ded56000 r--p 00010000 08:01 282112                             /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+ded56000-ded57000 rw-p 00011000 08:01 282112                             /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+ded57000-ded91000 r-xp 00000000 08:01 282189                             /usr/lib/i386-linux-gnu/libfontconfig.so.1.8.0
+ded91000-ded92000 r--p 0003a000 08:01 282189                             /usr/lib/i386-linux-gnu/libfontconfig.so.1.8.0
+ded92000-ded93000 rw-p 0003b000 08:01 282189                             /usr/lib/i386-linux-gnu/libfontconfig.so.1.8.0
+ded93000-deeb8000 r-xp 00000000 08:01 524325                             /lib/i386-linux-gnu/libglib-2.0.so.0.4200.1
+deeb8000-deeb9000 r--p 00124000 08:01 524325                             /lib/i386-linux-gnu/libglib-2.0.so.0.4200.1
+deeb9000-deeba000 rw-p 00125000 08:01 524325                             /lib/i386-linux-gnu/libglib-2.0.so.0.4200.1
+deeba000-def15000 r-xp 00000000 08:01 281547                             /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.4200.1
+def15000-def16000 r--p 0005b000 08:01 281547                             /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.4200.1
+def16000-def17000 rw-p 0005c000 08:01 281547                             /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.4200.1
+def17000-def67000 r-xp 00000000 08:01 282379                             /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3600.6
+def67000-def68000 r--p 00050000 08:01 282379                             /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3600.6
+def68000-def69000 rw-p 00051000 08:01 282379                             /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3600.6
+def69000-def7e000 r-xp 00000000 08:01 282401                             /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3600.6
+def7e000-def7f000 r--p 00015000 08:01 282401                             /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3600.6
+def7f000-def80000 rw-p 00016000 08:01 282401                             /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3600.6
+def80000-df131000 r-xp 00000000 08:01 281545                             /usr/lib/i386-linux-gnu/libgio-2.0.so.0.4200.1
+df131000-df134000 r--p 001b0000 08:01 281545                             /usr/lib/i386-linux-gnu/libgio-2.0.so.0.4200.1
+df134000-df135000 rw-p 001b3000 08:01 281545                             /usr/lib/i386-linux-gnu/libgio-2.0.so.0.4200.1
+df135000-df136000 rw-p 00000000 00:00 0 
+df136000-df15b000 r-xp 00000000 08:01 282345                             /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.3000.8
+df15b000-df15c000 r--p 00024000 08:01 282345                             /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.3000.8
+df15c000-df15d000 rw-p 00025000 08:01 282345                             /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.3000.8
+df15d000-df27c000 r-xp 00000000 08:01 303218                             /usr/lib/i386-linux-gnu/libcairo.so.2.11301.0
+df27c000-df27e000 r--p 0011e000 08:01 303218                             /usr/lib/i386-linux-gnu/libcairo.so.2.11301.0
+df27e000-df27f000 rw-p 00120000 08:01 303218                             /usr/lib/i386-linux-gnu/libcairo.so.2.11301.0
+df27f000-df280000 rw-p 00000000 00:00 0 
+df280000-df2a4000 r-xp 00000000 08:01 282139                             /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21209.1
+df2a4000-df2a6000 r--p 00023000 08:01 282139                             /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21209.1
+df2a6000-df2a7000 rw-p 00025000 08:01 282139                             /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21209.1
+df2a7000-df2ac000 r-xp 00000000 08:01 282433                             /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+df2ac000-df2ad000 r--p 00004000 08:01 282433                             /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+df2ad000-df2ae000 rw-p 00005000 08:01 282433                             /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+df2ae000-df3f5000 r-xp 00000000 08:01 282101                             /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+df3f5000-df3f6000 r--p 00146000 08:01 282101                             /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+df3f6000-df3f8000 rw-p 00147000 08:01 282101                             /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+df3f8000-df3f9000 rw-p 00000000 00:00 0 
+df3f9000-df405000 r-xp 00000000 08:01 282412                             /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3600.6
+df405000-df406000 r--p 0000b000 08:01 282412                             /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3600.6
+df406000-df407000 rw-p 0000c000 08:01 282412                             /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3600.6
+df407000-df40a000 r-xp 00000000 08:01 281544                             /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.4200.1
+df40a000-df40b000 r--p 00002000 08:01 281544                             /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.4200.1
+df40b000-df40c000 rw-p 00003000 08:01 281544                             /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.4200.1
+df40c000-df4c9000 r-xp 00000000 08:01 282503                             /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.25
+df4c9000-df4cb000 r--p 000bc000 08:01 282503                             /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.25
+df4cb000-df4cc000 rw-p 000be000 08:01 282503                             /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.25
+df4cc000-df4d1000 r-xp 00000000 08:01 282564                             /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+df4d1000-df4d2000 r--p 00004000 08:01 282564                             /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+df4d2000-df4d3000 rw-p 00005000 08:01 282564                             /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+df4d3000-df4d4000 r-xp 00000000 08:01 281546                             /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.4200.1
+df4d4000-df4d5000 r--p 00000000 08:01 281546                             /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.4200.1
+df4d5000-df4d6000 rw-p 00001000 08:01 281546                             /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.4200.1
+df4d6000-df9c5000 r-xp 00000000 08:01 282502                             /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.25
+df9c5000-df9c9000 r--p 004ef000 08:01 282502                             /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.25
+df9c9000-df9cb000 rw-p 004f3000 08:01 282502                             /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.25
+df9cb000-df9cd000 rw-p 00000000 00:00 0 
+df9cd000-df9ce000 r--s 00000000 08:06 523357                             /home/alex/.cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le32d4.cache-4
+df9ce000-df9cf000 r--s 00000000 08:06 523352                             /home/alex/.cache/fontconfig/0c9eb80ebd1c36541ebe2852d3bb0c49-le32d4.cache-4
+df9cf000-df9d1000 r--s 00000000 08:06 523339                             /home/alex/.cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-4
+df9d1000-df9d4000 r--s 00000000 08:06 523340                             /home/alex/.cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-4
+df9d4000-df9d8000 rwxp 00000000 00:00 0 
+df9d8000-df9e7000 r--p 00000000 08:01 403683                             /usr/share/locale-langpack/es/LC_MESSAGES/gtk20.mo
+df9e7000-dfa42000 r-xp 00000000 08:06 652928                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-pi-gtk-4236.so
+dfa42000-dfa44000 rw-p 0005a000 08:06 652928                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-pi-gtk-4236.so
+dfa44000-dfa45000 rw-p 00000000 00:00 0 
+dfa45000-dfa48000 r-xp 00000000 08:06 652923                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-gtk-4236.so
+dfa48000-dfa49000 rw-p 00002000 08:06 652923                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/27/1/.cp/libswt-gtk-4236.so
+dfa49000-dfa4a000 rw-p 00000000 00:00 0 
+dfa4a000-dfa4b000 r--s 00000000 08:06 652918                             /home/alex/Escritorio/import.io/configuration/org.eclipse.osgi/bundles/36/1/.cp/lib/cocoaswt.jar
+dfa4b000-dfa55000 r--s 00254000 08:06 652612                             /home/alex/Escritorio/import.io/jre/lib/resources.jar
+dfa55000-dfa5c000 r--s 00000000 08:01 303897                             /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+dfa5c000-dfa82000 r--p 00000000 08:01 418427                             /usr/share/locale-langpack/es/LC_MESSAGES/libc.mo
+dfa82000-dfad3000 rwxp 00000000 00:00 0                                  [stack:2813]
+dfad3000-dfad4000 r--s 00002000 08:06 651965                             /home/alex/Escritorio/import.io/plugins/net.javacrumbs.json2xml_4.1.0.jar
+dfad4000-dfad5000 r--s 00004000 08:06 651981                             /home/alex/Escritorio/import.io/plugins/org.eclipse.swt_3.100.1.v4236b.jar
+dfad5000-dfad7000 r--s 00005000 08:06 652925                             /home/alex/Escritorio/import.io/plugins/org.slf4j.api_1.6.4.jar
+dfad7000-dfadd000 r--s 00022000 08:06 652012                             /home/alex/Escritorio/import.io/plugins/osgi.enterprise_4.2.0.v201108120515.jar
+dfadd000-dfae0000 r--s 0002c000 08:06 652008                             /home/alex/Escritorio/import.io/plugins/com.fasterxml.jackson.core.jackson-core_2.2.2.jar
+dfae0000-dfaef000 r--s 00082000 08:06 653600                             /home/alex/Escritorio/import.io/plugins/joda-time_2.6.0.jar
+dfaef000-dfaf2000 r--s 00020000 08:06 653597                             /home/alex/Escritorio/import.io/plugins/com.importio.builder.bootstrap_1.0.0.20150216190206.jar
+dfaf2000-dfb00000 r--s 0007f000 08:06 653594                             /home/alex/Escritorio/import.io/plugins/cern.colt_1.2.0.qualifier.jar
+dfb00000-dfbf3000 rw-p 00000000 00:00 0 
+dfbf3000-dfc00000 ---p 00000000 00:00 0 
+dfc00000-dfc02000 r--s 00004000 08:06 653599                             /home/alex/Escritorio/import.io/plugins/org.slf4j.log4j_1.6.4.jar
+dfc02000-dfc04000 r--s 00015000 08:06 651992                             /home/alex/Escritorio/import.io/plugins/org.eclipse.core.contenttype_3.4.200.v20120523-2004.jar
+dfc04000-dfc08000 r--s 0003a000 08:06 651975                             /home/alex/Escritorio/import.io/plugins/net.sf.jtidy_1.0.0.jar
+dfc08000-dfc0c000 r--s 0003c000 08:06 652005                             /home/alex/Escritorio/import.io/plugins/org.apache.commons.lang_2.4.0.jar
+dfc0c000-dfc10000 r--s 0002e000 08:06 651966                             /home/alex/Escritorio/import.io/plugins/javax.servlet_3.0.0.v201112011016.jar
+dfc10000-dfc1b000 r--s 00073000 08:06 651970                             /home/alex/Escritorio/import.io/plugins/org.apache.httpcomponents.httpcore_4.2.1.jar
+dfc1b000-dfc1e000 r--s 00013000 08:06 651972                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.app_1.3.100.v20120522-1841.jar
+dfc1e000-dfc34000 r--s 00233000 08:06 651974                             /home/alex/Escritorio/import.io/plugins/org.eclipse.swt.gtk.linux.x86_3.100.1.v4236b.jar
+dfc34000-dfc37000 r--s 00006000 08:06 651994                             /home/alex/Escritorio/import.io/plugins/com.fasterxml.jackson.core.jackson-annotations_2.2.2.jar
+dfc37000-dfc38000 r--s 00003000 08:06 651995                             /home/alex/Escritorio/import.io/plugins/ch.qos.logback.slf4j_1.0.0.v20120123-1500.jar
+dfc38000-dfc62000 r--s 001e9000 08:06 652009                             /home/alex/Escritorio/import.io/plugins/com.google.guava_15.0.0.jar
+dfc62000-dfc64000 r--s 005f9000 08:06 653595                             /home/alex/Escritorio/import.io/plugins/nu.validator.htmlparser_1.0.0.20141112130656.jar
+dfc64000-dfc67000 r--s 00018000 08:06 652010                             /home/alex/Escritorio/import.io/plugins/com.springsource.org.apache.commons.io_1.4.0.jar
+dfc67000-dfc6c000 r--s 0003c000 08:06 652006                             /home/alex/Escritorio/import.io/plugins/ch.qos.logback.classic_1.0.0.v20111214-2030.jar
+dfc6c000-dfc7d000 r--s 000c3000 08:06 652001                             /home/alex/Escritorio/import.io/plugins/com.fasterxml.jackson.core.jackson-databind_2.2.2.jar
+dfc7d000-dfc8c000 r--s 000dc000 08:06 653590                             /home/alex/Escritorio/import.io/plugins/com.importio.builder_1.0.1.20150220184750.jar
+dfc8c000-dfd7f000 rwxp 00000000 00:00 0                                  [stack:2807]
+dfd7f000-dfd80000 ---p 00000000 00:00 0 
+dfd80000-dfe00000 rwxp 00000000 00:00 0                                  [stack:2793]
+dfe00000-dfefc000 rw-p 00000000 00:00 0 
+dfefc000-dff00000 ---p 00000000 00:00 0 
+dff00000-dff01000 r--s 00000000 08:06 653592                             /home/alex/Escritorio/import.io/plugins/com.importio.builder.logging_1.0.1.20140630170133.jar
+dff01000-dff04000 r--s 00018000 08:06 651964                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar
+dff04000-dff2e000 r--s 0038a000 08:06 652003                             /home/alex/Escritorio/import.io/plugins/org.apache.servicemix.bundles.saxon_9.5.1.1_1.jar
+dff2e000-dff7f000 rwxp 00000000 00:00 0                                  [stack:2792]
+dff7f000-dff80000 ---p 00000000 00:00 0 
+dff80000-e0000000 rwxp 00000000 00:00 0                                  [stack:2791]
+e0000000-e00a5000 rw-p 00000000 00:00 0 
+e00a5000-e0100000 ---p 00000000 00:00 0 
+e0100000-e010d000 r--s 0016e000 08:06 652002                             /home/alex/Escritorio/import.io/plugins/org.h2_1.3.172.jar
+e010d000-e0200000 rwxp 00000000 00:00 0                                  [stack:2788]
+e0200000-e02ed000 rw-p 00000000 00:00 0 
+e02ed000-e0300000 ---p 00000000 00:00 0 
+e0300000-e0302000 r--s 00008000 08:06 651999                             /home/alex/Escritorio/import.io/plugins/com.fasterxml.jackson.datatype.jackson-datatype-guava_2.2.2.jar
+e0302000-e0305000 r--s 0002a000 08:06 652013                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar
+e0305000-e0307000 r--s 00015000 08:06 651973                             /home/alex/Escritorio/import.io/plugins/org.eclipse.core.jobs_3.5.300.v20120912-155018.jar
+e0307000-e0318000 r--s 001b3000 08:06 651998                             /home/alex/Escritorio/import.io/plugins/projectlombok_0.11.8.1.jar
+e0318000-e0326000 r-xp 00000000 08:06 652773                             /home/alex/Escritorio/import.io/jre/lib/i386/libnio.so
+e0326000-e0327000 rw-p 0000e000 08:06 652773                             /home/alex/Escritorio/import.io/jre/lib/i386/libnio.so
+e0327000-e033b000 r-xp 00000000 08:06 652812                             /home/alex/Escritorio/import.io/jre/lib/i386/libnet.so
+e033b000-e033c000 rw-p 00014000 08:06 652812                             /home/alex/Escritorio/import.io/jre/lib/i386/libnet.so
+e033c000-e0350000 r--s 00142000 08:06 651991                             /home/alex/Escritorio/import.io/plugins/org.eclipse.osgi_3.8.2.v20130124-134944.jar
+e0350000-e0351000 ---p 00000000 00:00 0 
+e0351000-e03d1000 rwxp 00000000 00:00 0                                  [stack:2787]
+e03d1000-e041c000 rw-p 00000000 00:00 0 
+e041c000-e05d8000 r--s 031bb000 08:06 652623                             /home/alex/Escritorio/import.io/jre/lib/rt.jar
+e05d8000-e05df000 rw-p 00000000 00:00 0 
+e05df000-e05f9000 rw-p 00000000 00:00 0 
+e05f9000-e05ff000 rw-p 00000000 00:00 0 
+e05ff000-e064f000 rw-p 00000000 00:00 0 
+e064f000-e0652000 rw-p 00000000 00:00 0 
+e0652000-e0679000 rw-p 00000000 00:00 0 
+e0679000-e067f000 rw-p 00000000 00:00 0 
+e067f000-e06cf000 rw-p 00000000 00:00 0 
+e06cf000-e06d5000 rw-p 00000000 00:00 0 
+e06d5000-e06ef000 rw-p 00000000 00:00 0 
+e06ef000-e0c40000 rw-p 00000000 00:00 0 
+e0c40000-e5c40000 rw-p 00000000 00:00 0 
+e5c40000-e66f0000 rw-p 00000000 00:00 0 
+e66f0000-f06f0000 rw-p 00000000 00:00 0 
+f06f0000-f12f0000 rw-p 00000000 00:00 0 
+f12f0000-f46f0000 rw-p 00000000 00:00 0 
+f46f0000-f46f3000 r--s 0001c000 08:06 651977                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.preferences_3.5.1.v20121031-182809.jar
+f46f3000-f46f4000 r--s 00002000 08:06 652000                             /home/alex/Escritorio/import.io/plugins/javax.inject_1.0.0.v20091030.jar
+f46f4000-f46f6000 r--s 0000e000 08:06 651993                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.400.v20120913-155709.jar
+f46f6000-f46f8000 r--s 00013000 08:06 651968                             /home/alex/Escritorio/import.io/plugins/com.springsource.org.apache.xml.resolver_1.2.0.jar
+f46f8000-f4700000 rw-p 00000000 00:00 0 
+f4700000-f4778000 rw-p 00000000 00:00 0 
+f4778000-f4948000 rwxp 00000000 00:00 0 
+f4948000-f6778000 rw-p 00000000 00:00 0 
+f6778000-f678f000 r-xp 00000000 08:06 652781                             /home/alex/Escritorio/import.io/jre/lib/i386/libzip.so
+f678f000-f6790000 rw-p 00017000 08:06 652781                             /home/alex/Escritorio/import.io/jre/lib/i386/libzip.so
+f6790000-f679b000 r-xp 00000000 08:01 527007                             /lib/i386-linux-gnu/libnss_files-2.19.so
+f679b000-f679c000 r--p 0000a000 08:01 527007                             /lib/i386-linux-gnu/libnss_files-2.19.so
+f679c000-f679d000 rw-p 0000b000 08:01 527007                             /lib/i386-linux-gnu/libnss_files-2.19.so
+f679d000-f67a7000 r-xp 00000000 08:01 526109                             /lib/i386-linux-gnu/libnss_nis-2.19.so
+f67a7000-f67a8000 r--p 00009000 08:01 526109                             /lib/i386-linux-gnu/libnss_nis-2.19.so
+f67a8000-f67a9000 rw-p 0000a000 08:01 526109                             /lib/i386-linux-gnu/libnss_nis-2.19.so
+f67a9000-f67be000 r-xp 00000000 08:01 530700                             /lib/i386-linux-gnu/libnsl-2.19.so
+f67be000-f67bf000 r--p 00015000 08:01 530700                             /lib/i386-linux-gnu/libnsl-2.19.so
+f67bf000-f67c0000 rw-p 00016000 08:01 530700                             /lib/i386-linux-gnu/libnsl-2.19.so
+f67c0000-f67c2000 rw-p 00000000 00:00 0 
+f67c2000-f67ca000 r--s 00051000 08:06 652004                             /home/alex/Escritorio/import.io/plugins/ch.qos.logback.core_1.0.0.v20111214-2030.jar
+f67ca000-f67cc000 r--s 00011000 08:06 651969                             /home/alex/Escritorio/import.io/plugins/org.eclipse.core.runtime_3.8.0.v20120912-155025.jar
+f67cc000-f67d0000 r--s 0003c000 08:06 653588                             /home/alex/Escritorio/import.io/plugins/org.eclipse.jetty.osgi-servlet-api_3.1.0.M0.jar
+f67d0000-f67d4000 r--s 0007c000 08:06 652576                             /home/alex/Escritorio/import.io/jre/lib/jsse.jar
+f67d4000-f67dc000 rw-s 00000000 08:01 529219                             /tmp/hsperfdata_alex/2728
+f67dc000-f67ff000 r-xp 00000000 08:06 652779                             /home/alex/Escritorio/import.io/jre/lib/i386/libjava.so
+f67ff000-f6800000 rw-p 00023000 08:06 652779                             /home/alex/Escritorio/import.io/jre/lib/i386/libjava.so
+f6800000-f6844000 r-xp 00000000 08:01 530704                             /lib/i386-linux-gnu/libm-2.19.so
+f6844000-f6845000 r--p 00043000 08:01 530704                             /lib/i386-linux-gnu/libm-2.19.so
+f6845000-f6846000 rw-p 00044000 08:01 530704                             /lib/i386-linux-gnu/libm-2.19.so
+f6846000-f6848000 r--s 00003000 08:06 651997                             /home/alex/Escritorio/import.io/plugins/jrobotx_0.2.0.jar
+f6848000-f6849000 r--s 00008000 08:06 651996                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.frameworkadmin_2.0.100.v20120913-155515.jar
+f6849000-f684b000 r--s 0000b000 08:06 651978                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar
+f684b000-f6852000 r-xp 00000000 08:01 576475                             /lib/i386-linux-gnu/libnss_compat-2.19.so
+f6852000-f6853000 r--p 00006000 08:01 576475                             /lib/i386-linux-gnu/libnss_compat-2.19.so
+f6853000-f6854000 rw-p 00007000 08:01 576475                             /lib/i386-linux-gnu/libnss_compat-2.19.so
+f6854000-f685f000 r-xp 00000000 08:06 652801                             /home/alex/Escritorio/import.io/jre/lib/i386/libverify.so
+f685f000-f6860000 rw-p 0000b000 08:06 652801                             /home/alex/Escritorio/import.io/jre/lib/i386/libverify.so
+f6860000-f6d73000 r-xp 00000000 08:06 652828                             /home/alex/Escritorio/import.io/jre/lib/i386/client/libjvm.so
+f6d73000-f6d90000 rw-p 00513000 08:06 652828                             /home/alex/Escritorio/import.io/jre/lib/i386/client/libjvm.so
+f6d90000-f71af000 rw-p 00000000 00:00 0 
+f71af000-f72e0000 r--p 0046c000 08:01 140924                             /usr/lib/locale/locale-archive
+f72e0000-f7320000 r--p 002ec000 08:01 140924                             /usr/lib/locale/locale-archive
+f7320000-f7520000 r--p 00000000 08:01 140924                             /usr/lib/locale/locale-archive
+f7520000-f7521000 rw-p 00000000 00:00 0 
+f7521000-f76c8000 r-xp 00000000 08:01 576474                             /lib/i386-linux-gnu/libc-2.19.so
+f76c8000-f76ca000 r--p 001a7000 08:01 576474                             /lib/i386-linux-gnu/libc-2.19.so
+f76ca000-f76cb000 rw-p 001a9000 08:01 576474                             /lib/i386-linux-gnu/libc-2.19.so
+f76cb000-f76cf000 rw-p 00000000 00:00 0 
+f76cf000-f76d2000 r-xp 00000000 08:01 576480                             /lib/i386-linux-gnu/libdl-2.19.so
+f76d2000-f76d3000 r--p 00002000 08:01 576480                             /lib/i386-linux-gnu/libdl-2.19.so
+f76d3000-f76d4000 rw-p 00003000 08:01 576480                             /lib/i386-linux-gnu/libdl-2.19.so
+f76d4000-f76ec000 r-xp 00000000 08:01 576471                             /lib/i386-linux-gnu/libpthread-2.19.so
+f76ec000-f76ee000 r--p 00017000 08:01 576471                             /lib/i386-linux-gnu/libpthread-2.19.so
+f76ee000-f76ef000 rw-p 00019000 08:01 576471                             /lib/i386-linux-gnu/libpthread-2.19.so
+f76ef000-f76f2000 rw-p 00000000 00:00 0 
+f76f2000-f76f3000 r--p 00000000 00:00 0 
+f76f3000-f76fa000 r-xp 00000000 08:01 526225                             /lib/i386-linux-gnu/librt-2.19.so
+f76fa000-f76fb000 r--p 00006000 08:01 526225                             /lib/i386-linux-gnu/librt-2.19.so
+f76fb000-f76fc000 rw-p 00007000 08:01 526225                             /lib/i386-linux-gnu/librt-2.19.so
+f76fc000-f7709000 r-xp 00000000 08:06 651984                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_1.1.200.v20120913-144807/eclipse_1502.so
+f7709000-f770a000 rw-p 0000c000 08:06 651984                             /home/alex/Escritorio/import.io/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_1.1.200.v20120913-144807/eclipse_1502.so
+f770a000-f770b000 r--p 006d5000 08:01 140924                             /usr/lib/locale/locale-archive
+f770b000-f770d000 rw-p 00000000 00:00 0 
+f770d000-f770e000 r-xp 00000000 00:00 0                                  [vdso]
+f770e000-f7710000 r--p 00000000 00:00 0                                  [vvar]
+f7710000-f7730000 r-xp 00000000 08:01 530601                             /lib/i386-linux-gnu/ld-2.19.so
+f7730000-f7731000 r--p 0001f000 08:01 530601                             /lib/i386-linux-gnu/ld-2.19.so
+f7731000-f7732000 rw-p 00020000 08:01 530601                             /lib/i386-linux-gnu/ld-2.19.so
+ffe17000-ffe1a000 ---p 00000000 00:00 0 
+ffe1b000-ffe66000 rwxp 00000000 00:00 0                                  [stack]
+ffe66000-ffe67000 rw-p 00000000 00:00 0 
+
+VM Arguments:
+jvm_args: -Xverify:none -Dorg.osgi.framework.system.packages.extra=com.sun.management -Dfile.encoding=UTF-8 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+LD_LIBRARY_PATH=/home/alex/Escritorio/import.io/jre/lib/i386/client:/home/alex/Escritorio/import.io/jre/lib/i386:
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x490c10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x490c10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x3a4730], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00001000, sa_flags=0x10000000
+SIGXFSZ: [libjvm.so+0x3a4730], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x3a4730], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x3a4010], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x3a6600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x3a6600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x3a6600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x3a6600], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:jessie/sid
+
+uname:Linux 3.16.0-30-generic #40-Ubuntu SMP Mon Jan 12 22:06:37 UTC 2015 x86_64
+libc:glibc 2.19 NPTL 2.19 
+rlimit: STACK 8192k, CORE 0k, NPROC 13646, NOFILE 4096, AS infinity
+load average:0,51 0,29 0,16
+
+/proc/meminfo:
+MemTotal:        3515812 kB
+MemFree:         2325532 kB
+MemAvailable:    2750816 kB
+Buffers:           77732 kB
+Cached:           457224 kB
+SwapCached:            0 kB
+Active:           760940 kB
+Inactive:         314148 kB
+Active(anon):     541136 kB
+Inactive(anon):    10204 kB
+Active(file):     219804 kB
+Inactive(file):   303944 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       5858300 kB
+SwapFree:        5858300 kB
+Dirty:               956 kB
+Writeback:             0 kB
+AnonPages:        540412 kB
+Mapped:           189112 kB
+Shmem:             10960 kB
+Slab:              47792 kB
+SReclaimable:      28316 kB
+SUnreclaim:        19476 kB
+KernelStack:        6144 kB
+PageTables:        24732 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     7616204 kB
+Committed_AS:    3001056 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       40960 kB
+VmallocChunk:   34359692792 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    231424 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       42944 kB
+DirectMap2M:     3545088 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3517U CPU @ 1.90GHz
+stepping	: 9
+microcode	: 0x19
+cpu MHz		: 2397.161
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl pni ssse3 lahf_lm
+bogomips	: 4794.32
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3517U CPU @ 1.90GHz
+stepping	: 9
+microcode	: 0x19
+cpu MHz		: 2397.161
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl pni ssse3 lahf_lm
+bogomips	: 4794.32
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3515812k(2325532k free), swap 5858300k(5858300k free)
+
+vm_info: Java HotSpot(TM) Client VM (23.5-b02) for linux-x86 JRE (1.7.0_09-b05), built on Sep 24 2012 20:42:41 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Wed Mar 11 18:15:16 2015
+elapsed time: 3 seconds
+
